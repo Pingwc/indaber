@@ -1,0 +1,51 @@
+---
+
+---
+
+<style>
+  h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 170px;
+    margin-right: 1rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+
+  a:hover {
+    background-color: #c4c1c1;
+    color: #333;
+  }
+</style>
+
+<header>
+  <div class="bg-white p-1 flex items-center justify-between">
+    <h1>
+      <img src="../../logoindaber.png" alt="Company Logo" />
+    </h1>
+    <nav>
+      <div class="hidden md:flex space-x-4 ml-auto">
+        <a href="/" class="font-semibold">Inicio</a>
+        <a href="/clientes" class="font-semibold">Clientes</a>
+        <a href="/contacto" class="font-semibold">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
