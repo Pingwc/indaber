@@ -1,0 +1,44 @@
+---
+import { MARCAS } from "@/const/marcas";
+---
+
+<section class="my-40">
+  <h3
+    class="text-2xl font-semibold uppercase text-white flex items-center justify-center"
+  >
+    Marcas
+  </h3>
+  <h2 class="text-2xl text-white flex items-center justify-center">
+    Algunas de las marcas con las que trabajamos:
+  </h2>
+  <div class="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3 px-20 lg:px-60">
+    {
+      MARCAS.map(({ id, name, url }) => (
+        <div class="relative">
+          <a
+            class="company-link group relative flex h-24 md:h-32 lg:h-40 items-center justify-center overflow-hidden"
+            title={`Visita la web de ${name}`}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={`/img/marcas/${id}.svg`}
+              alt={`Logo de ${name}`}
+              class="company-logo w-40 h-auto px-2 transition group-hover:scale-110"
+            />
+          </a>
+          <span class="text-white block text-center mt-2">{name}</span>
+        </div>
+      ))
+    }
+  </div>
+  <div class="mt-10 flex items-center justify-center text-white">
+    Y muchos otros...
+  </div>
+</section>
+<style>
+  .company-link {
+    background: whitesmoke;
+  }
+</style>
