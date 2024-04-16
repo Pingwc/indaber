@@ -1,0 +1,41 @@
+---
+import { CLIENTES } from "@/const/clientes";
+---
+
+<section class="my-40">
+  <h3
+    class="text-2xl font-semibold uppercase text-orange-500 flex items-center justify-center"
+  >
+    Clientes
+  </h3>
+  <div class="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-4 px-20 lg:px-60">
+    {
+      CLIENTES.map(({ id, name, url }) => (
+        <div class="relative">
+          <a
+            class="company-link group relative mx-10 sm:mx-0 flex h-24 md:h-32 lg:h-40 items-center justify-center overflow-hidden"
+            title={`Visita la web de ${name}`}
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={`/img/clientes/${id}.svg`}
+              alt={`Logo de ${name}`}
+              class="company-logo w-20 h-auto px-2 transition group-hover:scale-110"
+            />
+          </a>
+          <span class="text-white block text-center mt-2">{name}</span>
+        </div>
+      ))
+    }
+  </div>
+  <div class="mt-10 flex items-center justify-center text-white">
+    Y muchos otros...
+  </div>
+</section>
+<style>
+  .company-link {
+    background: whitesmoke;
+  }
+</style>
