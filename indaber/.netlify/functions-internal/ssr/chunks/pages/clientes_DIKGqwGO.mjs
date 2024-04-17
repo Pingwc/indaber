@@ -2,7 +2,7 @@
 import { c as createAstro, d as createComponent, r as renderTemplate, m as maybeRenderHead, e as addAttribute, g as renderComponent } from '../astro_2eN6dZb_.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$Layout } from './404_BKtPaY8v.mjs';
+import { $ as $$Layout } from './404_yJbkbElJ.mjs';
 import 'clsx';
 /* empty css                             */
 

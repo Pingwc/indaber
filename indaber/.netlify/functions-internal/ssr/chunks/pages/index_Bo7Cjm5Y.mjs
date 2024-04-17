@@ -2,7 +2,7 @@
 import { c as createAstro, d as createComponent, r as renderTemplate, m as maybeRenderHead, e as addAttribute, g as renderComponent } from '../astro_2eN6dZb_.mjs';
 import 'kleur/colors';
 import 'html-escaper';
-import { $ as $$Layout } from './404_BKtPaY8v.mjs';
+import { $ as $$Layout } from './404_yJbkbElJ.mjs';
 import 'clsx';
 /* empty css                          */
 
@@ -59,14 +59,21 @@ const $$Astro$1 = createAstro();
 const $$Parallax = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Parallax;
-  return renderTemplate`${maybeRenderHead()}<section class="min-h-screen flex items-center justify-center relative" data-astro-cid-2f47y5ps> <div class="absolute inset-0 overflow-hidden" data-astro-cid-2f47y5ps> <div class="parallax-bg h-full" style="background-image: url('../../img/fotos/paneles.jpeg');" data-astro-cid-2f47y5ps></div> </div> <div class="text-white text-center z-10" data-astro-cid-2f47y5ps> <h1 class="text-4xl md:text-6xl font-bold mb-4" data-astro-cid-2f47y5ps>Indaber</h1> </div> </section> <section class="py-20 text-center" data-astro-cid-2f47y5ps> <p class="text-xl text-white" data-astro-cid-2f47y5ps>Expertos en instalaciones electricas</p> </section> <section class="py-20 flex-1 md:flex items-center" data-astro-cid-2f47y5ps> <div class="text-center" data-astro-cid-2f47y5ps> <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-white uppercase" data-astro-cid-2f47y5ps>
+  return renderTemplate`${maybeRenderHead()}<section class="min-h-[70vh] flex items-center justify-center relative" data-astro-cid-2f47y5ps> <div class="absolute inset-0 overflow-hidden" data-astro-cid-2f47y5ps> <div class="parallax-bg h-full" style="background-image: url('../../img/fotos/paneles.jpeg');" data-astro-cid-2f47y5ps></div> </div> <div class="text-white text-center z-10" data-astro-cid-2f47y5ps> <h1 class="text-4xl md:text-6xl font-bold mb-4" data-astro-cid-2f47y5ps>Indaber</h1> </div> </section> <section class="text-center bg-white" data-astro-cid-2f47y5ps> <p class="text-2xl text-blue-300 font-bold" data-astro-cid-2f47y5ps>
+Contamos con expertos en cada área
+</p> <p class="text-xl text-black font-semibold" data-astro-cid-2f47y5ps>
+Contamos con expertos en cada área, cubriendo todas las especialidades con
+    nuestro equipo interno. Esto nos permite asegurar la excelencia en cada
+    proyecto, al tiempo que proporcionamos un ahorro significativo de tiempo
+    para nuestros clientes
+</p> </section> <section class="flex-1 md:flex items-center bg-black" data-astro-cid-2f47y5ps> <div class="text-center" data-astro-cid-2f47y5ps> <h2 class="text-3xl md:text-4xl font-semibold mb-4 text-orange-500 uppercase" data-astro-cid-2f47y5ps>
 Instalaciones para empresas y particulares
-</h2> <h3 class="text-4xl md:text-5xl font bold mb-4 text-white" data-astro-cid-2f47y5ps>
+</h2> <h3 class="text-2xl md:text-3xl font bold mb-4 text-white uppercase" data-astro-cid-2f47y5ps>
 Proyectos a medida
 </h3> <p class="text-xl text-white" data-astro-cid-2f47y5ps>
 Ya seas una empresa que quiere mejorar su consumo de la red electrica, o
-      un particular que quiere tener autoconsumo.
-</p> </div> <div class="" data-astro-cid-2f47y5ps> <div class="" data-astro-cid-2f47y5ps> <img src="../../img/fotos/electricista.jpg" alt="Imagen de un electricista" class="max-w-full h-auto" loading="lazy" data-astro-cid-2f47y5ps> </div> </div> </section> <section class="py-20 text-center" data-astro-cid-2f47y5ps> <p class="text-xl text-white" data-astro-cid-2f47y5ps>Prueba</p> </section> `;
+      un particular que quiere tener autoconsumo para reducir su propio gasto.
+</p> </div> <div class="" data-astro-cid-2f47y5ps> <div class="" data-astro-cid-2f47y5ps> <img src="../../img/fotos/electricista.jpg" alt="Imagen de un electricista" class="max-w-full h-auto" loading="lazy" data-astro-cid-2f47y5ps> </div> </div> </section> <section class="py-20 text-center bg-white" data-astro-cid-2f47y5ps> <p class="text-xl text-orange-500" data-astro-cid-2f47y5ps>Pide tu presupuesto YA!</p> </section> `;
 }, "C:/Users/pingw/Astro/indaber/indaber/src/sections/parallax.astro", void 0);
 
 const $$Astro = createAstro();
