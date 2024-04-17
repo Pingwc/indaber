@@ -1,0 +1,39 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { KITS } from "@/const/kits";
+
+export function getStaticPaths() {
+  return KITS.map(({ id }) => {
+    return { params: { id } };
+  });
+}
+const { id } = Astro.params;
+//KITS[0].nombre
+const [kit] = KITS.filter((kit) => kit.id == id);
+
+export const prerender = true;
+---
+
+<Layout title=`Indaber | ${kit.nombre}`>
+  <main>
+    <div class="flex flex-col md:flex-row">
+      <div class="flex-1 lg:w-full bg-white">
+        <img
+          src={kit.imagen}
+          alt={kit.nombre}
+          class="w-full md:w-3/5 md:mx-20 h-full"
+          <img
+        />
+      </div>
+      <div class="flex-1 bg-white md:border md:rounded-md px-10 mx-5">
+        <h3 class="text-3xl font-bold my-5 mx-2">{kit.nombre}</h3>
+
+        <h2 class="text-2xl font-bold my-5 mx-2 text-orange-400">
+          {kit.precio} €
+        </h2>
+        <hr />
+        <h1 class="text-1xl my-5 mx-2">{kit.descripcion}</h1>
+      </div>
+    </div>
+  </main></Layout
+>
