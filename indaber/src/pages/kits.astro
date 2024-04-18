@@ -1,0 +1,56 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { KITS } from "@/const/kits";
+
+const { id } = Astro.params;
+const [kit] = KITS.filter((kit) => kit.id == id);
+
+console.log([kit]);
+
+console.log(id);
+---
+
+<Layout title="Indaber - Kits Fotovoltaicos">
+  <main>
+    <section
+      class="pt-10 flex flex-col items-center justify-center bg-slate-200 py-3"
+    >
+      <h3 class="text-orange-400 text-2xl font-bold">KITS predefinidos</h3>
+      <p class="text-black">
+        Estos son los KITS que tenemos ahora mismo y se adaptan a las
+        necesidades de la mayoria de nuestros clientes
+      </p>
+
+      <div
+        class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg-grid-cols-3 gap-4 my-5 px-4"
+      >
+        {
+          KITS.map(({ id, nombre, precio, descripcion, imagen }) => (
+            <div class="bg-white rounded-md shadow-md p-4">
+              <img
+                src={imagen}
+                alt={`Imagen de ${nombre}`}
+                class="w-full h-auto rounded-md mb-4"
+              />
+              <a href={`/kits/${id}`}>
+                <h3 class="text-xl font-semibold mb-2 hover:text-blue-500 ">
+                  {nombre}
+                </h3>
+              </a>
+              <p class="text 2xl font-bold my-2 mx-2 text-orange-400 mb-2">
+                {precio} €
+              </p>
+              <hr />
+              <p class="text-gray-500 font-semibold">{descripcion}</p>
+            </div>
+          ))
+        }
+      </div>
+      <h3 class="text-lg">
+        Si no encuentras lo que buscas, <span class="text-orange-500"
+          >contactanos</span
+        > para poder hacer un estudio personalizado
+      </h3>
+    </section>
+  </main>
+</Layout>
