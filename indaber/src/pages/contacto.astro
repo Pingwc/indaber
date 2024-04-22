@@ -1,5 +1,6 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Form from "@/components/Form.astro";
 ---
 
 <Layout title="Contacto">
@@ -16,88 +17,9 @@ import Layout from "@/layouts/Layout.astro";
     </div>
   </section>
   <section class="flex mt-6">
-    <div class="flex-1 bg-green-300">
-      <div class="form-container bg-slate-600 rounded-md my-6 mx-6">
-        <form
-          name="contacto"
-          method="POST"
-          data-netlify="true"
-          class="text-white ml-5 py-5"
-        >
-          <div class="mb-4">
-            <label for="nombre">
-              Nombre
-              <span class="text-orange-500">*</span>
-              <br />
-            </label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              required
-              class="text-black"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="apellidos">
-              Apellido(s)
-              <br />
-            </label>
-            <input
-              type="text"
-              id="apellidos"
-              name="apellidos"
-              class="text-black"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="email">
-              Correo electrónico
-              <span class="text-orange-500">*</span>
-              <br />
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="text-black"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="telefono">
-              Teléfono
-              <br />
-            </label>
-            <input
-              type="text"
-              id="telefono"
-              name="telefono"
-              class="text-black"
-            />
-          </div>
-          <div class="mb-4">
-            <label for="mensaje">
-              Describa la consulta
-              <span class="text-orange-500">*</span>
-              <br />
-            </label>
-            <textarea
-              rows="8"
-              cols="60"
-              id="mensaje"
-              name="mensaje"
-              class="text-black"></textarea>
-          </div>
-          <div class="mb-4">
-            <input type="checkbox" id="politica" name="politica" />
-            <label for="politica"> Acepta la política de privacidad </label>
-          </div>
-
-          <button type="submit" value="Enviar" class="bg-slate-300 rounded px-2"
-            >Enviar</button
-          >
-        </form>
+    <div class="flex-1 bg-green-300 py-5">
+      <div class="form-container bg-slate-600 rounded-md mx-6">
+        <Form />
       </div>
     </div>
     <div class="flex-1 bg-white py-5 px-5">
