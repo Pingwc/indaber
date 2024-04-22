@@ -2,24 +2,25 @@
 
 ---
 
-<header>
-  <nav class="bg-blue-300 p-1 flex flex-1 items-center justify-between">
-    <div class="w-full flex p-2 bg-red-300">
-      <a href="/" class="flex">
-        <img src="../../logoindaber.png" alt="Company Logo" />
-      </a>
+<nav class="bg-white w-full z-20 top-0 start-0">
+  <div class="w-full flex flex-wrap items-center justify-between mx-auto p-2">
+    <a href="/" class="flex items-center space-x-3">
+      <img src="../../logoindaber.png" class="" alt="Logo Indaber" />
+    </a>
+
+    <div class="flex md:order-2 space-x-3 md:space-x-0 justify-end">
       <a
         id="menu-button"
         data-collapse-toggle="navbar-sticky"
         data-nav-toggle="#navbar-sticky"
         href="#"
-        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none"
         aria-controls="navbar-sticky"
         aria-expanded="false"
       >
         <span class="sr-only">Abrir menú principal</span>
         <svg
-          class="w-6 h-6"
+          class="w-5 h-5"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -33,64 +34,70 @@
             d="M1 1h15M1 7h15M1 13h15"></path>
         </svg>
       </a>
-      <div
-        id="menu-open"
-        class="md:block hidden w-full items-center align-middle"
-        id="navbar-sticky"
-      >
-        <ul
-          class="flex flex-col md:flex-row align-middle items-center justify-end pr-1"
-        >
-          <li>
-            <a href="/" class="nav-link font-semibold">Inicio</a>
-          </li>
-          <li>
-            <a href="/clientes" class="nav-link font-semibold">Clientes</a>
-          </li>
-          <li>
-            <a href="/contacto" class="nav-link font-semibold">Contacto</a>
-          </li>
-          <li>
-            <a href="/kits" class="nav-link font-semibold">Kits</a>
-          </li>
-          <li>
-            <a href="/calcular-kit" class="nav-link font-semibold"
-              >Calcula tu kit</a
-            >
-          </li>
-        </ul>
-      </div>
     </div>
-  </nav>
+    <div
+      id="menu-open"
+      class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 navbar"
+      id="navbar-sticky"
+    >
+      <ul
+        class="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8 md:flex-row md:mt-0 md:border-0"
+      >
+        <li>
+          <a
+            href="/"
+            class="btn block py-2 px-3 text-black rounded md:bg-transparen md:p-0 hover:text-[#f1a772]"
+            aria-current="page">Inicio</a
+          >
+        </li>
+        <li>
+          <a
+            href="/clientes"
+            class="btn block py-2 px-3 text-black rounded md:bg-transparen md:p-0 hover:text-[#f1a772]"
+            >Clientes</a
+          >
+        </li>
+        <li>
+          <a
+            href="/contacto"
+            class="btn block py-2 px-3 text-black rounded md:bg-transparen md:p-0 hover:text-[#f1a772]"
+            >Contacto</a
+          >
+        </li>
+        <li>
+          <a
+            href="/kits"
+            class="btn block py-2 px-3 text-black rounded md:bg-transparen md:p-0 hover:text-[#f1a772]"
+            >Kits</a
+          >
+        </li>
+        <li>
+          <a
+            href="/calcular-kit"
+            class="btn block py-2 px-3 text-black rounded md:bg-transparen md:p-0 hover:text-[#f1a772]"
+            >Calcula tu kit</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-  <style>
-    img {
-      width: 170px;
-      margin-right: 1rem;
-    }
+<script>
+  const button = document.querySelector("#menu-button") as Element;
+  const menuOpen = document.querySelector("#menu-open") as Element;
 
-    a {
-      color: #333;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-      border-radius: 2px;
-      transition:
-        background-color 0.3s,
-        color 0.3s;
-    }
+  button?.addEventListener("click", () => {
+    menuOpen.classList.toggle("hidden");
+  });
+</script>
 
-    .nav-link:hover {
-      background-color: #c4c1c1;
-      color: #333;
-    }
-  </style>
-
-  <script>
-    const button = document.querySelector("#menu-button") as Element;
-    const menuOpen = document.querySelector("#menu-open") as Element;
-
-    button?.addEventListener("click", () => {
-      menuOpen.classList.toggle("hidden");
-    });
-  </script>
-</header>
+<style>
+  img {
+    width: 170px;
+    margin-right: 1rem;
+  }
+  a {
+    transition: color 0.3s;
+  }
+</style>
