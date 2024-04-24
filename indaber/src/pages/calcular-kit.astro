@@ -1,0 +1,208 @@
+---
+import Header1 from "@/components/Header1.astro";
+import Header2 from "@/components/Header2.astro";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" initial-scale="1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Indaber | Calcula tu kit</title>
+  </head>
+
+  <body>
+    <header>
+      <Header1 />
+      <Header2 />
+    </header>
+
+    <section
+      class="section-container bg-slate-200 px-10 w-full h-screen justify-center items-center"
+    >
+      <div class="container justify-center items-center p-10 h-full">
+        <div class="block mx-auto">
+          <h3 class="text-2xl font-bold">Indica tu gasto mensual de la luz</h3>
+          <h2 class="text-lg">
+            Te recomendaremos uno de nuestros kits fotovoltaicos basado en tu
+            gasto
+          </h2>
+
+          <form class="">
+            <label class="range-label"
+              >Indica gasto mensual(IVA incluido):
+            </label>
+            <br />
+            <input
+              type="range"
+              id="rangeInput"
+              min="50"
+              max="400"
+              value="100"
+              class="w-full rounded h-4"
+              oninput="cantidad.innerText = this.value"
+            />
+            <br />
+            <output name="cantidad" id="cantidad" class="font-medium text-2xl"
+              >100
+            </output><span class="font-medium text-2xl">€</span>
+            <br />
+          </form>
+
+          <!-- Trigger/Open The Modal -->
+          <button
+            id="open-button"
+            class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 mt-4 block mx-auto"
+            >Obtener mi kit</button
+          >
+
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <img class="imagen" id="imagen" src="" />
+              <p class="nombre text-xl text-black font-semibold" id="nombre">
+              </p>
+              <hr />
+              <p
+                class="precio text-xl text-orange-400 font-semibold"
+                id="precio"
+              >
+                precio €
+              </p>
+              <hr />
+              <p class="descripcion" id="descripcion">descripción</p>
+              <br />
+              <button class="bg-blue-300 rounded p-1 m-1"
+                >Más información</button
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+<style>
+  input[type="range"] {
+    accent-color: coral;
+  }
+  h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 170px;
+    margin-right: 1rem;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
+  }
+
+  a:hover {
+    background-color: #c4c1c1;
+    color: #333;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+</style>
+
+<script>
+  import { KITS } from "@/const/kits";
+
+  let modal = document.getElementById("myModal") as HTMLElement;
+  let imagen = document.getElementById("imagen") as HTMLImageElement;
+
+  let nombre = document.getElementById("nombre") as HTMLElement;
+  let precio = document.getElementById("precio") as HTMLElement;
+  let descripcion = document.getElementById("descripcion") as HTMLElement;
+
+  let btn = document.getElementById("open-button") as HTMLElement;
+
+  let span = document.getElementsByClassName("close")[0] as HTMLElement;
+
+  btn.onclick = function () {
+    if (cantidad.innerText <= 100) {
+      imagen.src = KITS[0].imagen;
+      nombre.innerText = KITS[0].nombre;
+      precio.innerText = KITS[0].precio.toString() + "€";
+      descripcion.innerText = KITS[0].descripcion;
+    } else if (cantidad.innerText > 100 && cantidad.innerText <= 200) {
+      imagen.src = KITS[1].imagen;
+      nombre.innerText = KITS[1].nombre;
+      precio.innerText = KITS[1].precio.toString() + "€";
+      descripcion.innerText = KITS[1].descripcion;
+    } else if (cantidad.innerText > 200 && cantidad.innerText <= 300) {
+      imagen.src = KITS[2].imagen;
+      nombre.innerText = KITS[2].nombre;
+      precio.innerText = KITS[2].precio.toString() + "€";
+      descripcion.innerText = KITS[2].descripcion;
+    } else {
+      imagen.src = KITS[3].imagen;
+      nombre.innerText = KITS[3].nombre;
+      precio.innerText = KITS[3].precio.toString() + "€";
+      descripcion.innerText = KITS[3].descripcion;
+    }
+    modal.style.display = "block";
+  };
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+</script>
