@@ -187,11 +187,17 @@ import Header2 from "@/components/Header2.astro";
       nombre.innerText = KITS[2].nombre;
       precio.innerText = KITS[2].precio.toString() + "€";
       descripcion.innerText = KITS[2].descripcion;
-    } else {
-      imagen.src = KITS[3].imagen;
+    } else if(cantidad.innerText > 200 && cantidad.innerText <= 300) {
+        imagen.src = KITS[3].imagen;
       nombre.innerText = KITS[3].nombre;
       precio.innerText = KITS[3].precio.toString() + "€";
       descripcion.innerText = KITS[3].descripcion;
+    }else {
+        nombre.innerText = "";
+        precio.innerText = "";
+        descripcion.innerText = "SI NO APARECE NINGÚN KIT, CONTACTENOS PARA OBTENER MÁS INFORMACIÓN.";
+    }
+      
     }
     modal.style.display = "block";
   };
